@@ -8,11 +8,11 @@
   <body>
     <div><h1>Profile Information</h1></div>
     <div id="personalInfo"></div>
-    <div class="aboutMe"></div>
-    <div class="skills"></div>
-    <div class="education"></div>
-    <div class="personalReference"></div>
-    <div class="workExpierence"></div>
+    <div id="aboutMe"></div>
+    <div id="skills"></div>
+    <div id="education"></div>
+    <div id="personalReference"></div>
+    <div id="workExperience"></div>
   </body>
 
   <!-- javascrpit fetching API -->
@@ -36,56 +36,60 @@
     function displayPersonalInfo(info) {
       const container = document.getElementById("personalInfo");
       info.forEach((item) => {
-        container.innerHTML += `<p>Name: ${item.Name}</p>
-                              <p>Birthdate: ${item.Birthdate}</p>
-                              <p>Gender: ${item.Gender}</p>
-                              <p>Contact No: ${item.Contact_No}</p>
-                              <p>Address: ${item.Address}</p>
-                              <p>Email: ${item.Email}</p>`;
+        container.innerHTML += "<p>Name: " + item.Name + "</p>" +
+          "<p>Birthdate: " + item.Birthdate + "</p>" +
+          "<p>Gender: " + item.Gender + "</p>" +
+          "<p>Contact No: " + item.Contact_No + "</p>" +
+          "<p>Address: " + item.Address + "</p>" +
+          "<p>Email: " + item.Email + "</p>";
       });
     }
 
     function displayAboutMe(about) {
       const container = document.getElementById("aboutMe");
       about.forEach((item) => {
-        container.innerHTML += <p>${item.Description}</p>;
+        container.innerHTML += "<p>About Me: " + item.Description + "</p>" ;
       });
     }
 
     function displaySkills(skills) {
       const container = document.getElementById("skills");
       skills.forEach((item) => {
-        container.innerHTML += <p>Skills: ${item.Languages.join(", ")}</p>;
+        const p = document.createElement("p");
+        p.textContent = "Skills: " + item.Languages.join(", ");
+        container.appendChild(p);
       });
     }
 
     function displayEducation(education) {
       const container = document.getElementById("education");
       education.forEach((item) => {
-        container.innerHTML += (
-          <p>
-            ${item.Level} at ${item.School} (${item.Year})
-          </p>
-        );
+        container.innerHTML += "<p>Level: " + item.Degree + "</p>" +
+          "<p>School: " + item.Institution + "</p>" +
+          "<p>Year: " + item.Year + "</p>";
       });
     }
 
     function displayPersonal_References(references) {
       const container = document.getElementById("personalReference");
       references.forEach((item) => {
-        container.innerHTML += `<p>Name: ${item.Name}</p>
-                              <p>Contact_No: ${item.Contact_No}</p>
-                              <p>Relationship: ${item.Relationship}</p>`;
+        const div = document.createElement("div");
+        div.innerHTML = "<p>Name: " + item.Name + "</p>" +
+          "<p>Contact_No: " + item.Contact_No + "</p>" +
+          "<p>Relationship: " + item.Relationship + "</p>";
+        container.appendChild(div);
       });
     }
 
     function displayWork_Experience(experience) {
-      const container = document.getElementById("workExpierence");
+      const container = document.getElementById("workExperience");
       experience.forEach((item) => {
-        container.innerHTML += ` <p>Company: ${item.Company}</p>
-                                <p>Position: ${item.Job_Title}</p>
-                                <p>Duration: ${item.Start_Date}</p>
-                                <p>Description: ${item.End_Date}</p>`
+        const div = document.createElement("div");
+        div.innerHTML = "<p>Company: " + item.Company + "</p>" +
+          "<p>Position: " + item.Job_Title + "</p>" +
+          "<p>Duration: " + item.Start_Date + "</p>" +
+          "<p>Description: " + item.End_Date + "</p>";
+        container.appendChild(div);
       });
     }
   </script>
