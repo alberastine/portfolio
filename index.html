@@ -13,6 +13,80 @@
     <div class="education"></div>
     <div class="personalReference"></div>
     <div class="workExpierence"></div>
-    <script src="index.js"></script>
   </body>
+
+  <!-- javascrpit fetching API -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const apiUrl = "https://webservice-wkoq.onrender.com";
+
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          displayPersonalInfo(data.Personal_Information);
+          displayAboutMe(data.About_Me);
+          displaySkills(data.Skills);
+          displayEducation(data.Education);
+          displayPersonal_References(data.Personal_References);
+          displayWork_Experience(data.Work_Experience);
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    });
+
+    function displayPersonalInfo(info) {
+      const container = document.getElementById("personalInfo");
+      info.forEach((item) => {
+        container.innerHTML += `<p>Name: ${item.Name}</p>
+                              <p>Birthdate: ${item.Birthdate}</p>
+                              <p>Gender: ${item.Gender}</p>
+                              <p>Contact No: ${item.ContactNo}</p>
+                              <p>Address: ${item.Address}</p>
+                              <p>Email: ${item.Email}</p>`;
+      });
+    }
+
+    function displayAboutMe(about) {
+      const container = document.getElementById("aboutMe");
+      about.forEach((item) => {
+        container.innerHTML += <p>${item.Description}</p>;
+      });
+    }
+
+    function displaySkills(skills) {
+      const container = document.getElementById("skills");
+      skills.forEach((item) => {
+        container.innerHTML += <p>Skills: ${item.Languages.join(", ")}</p>;
+      });
+    }
+
+    function displayEducation(education) {
+      const container = document.getElementById("education");
+      education.forEach((item) => {
+        container.innerHTML += (
+          <p>
+            ${item.Level} at ${item.School} (${item.Year})
+          </p>
+        );
+      });
+    }
+
+    function displayPersonal_References(references) {
+      const container = document.getElementById("personalReference");
+      references.forEach((item) => {
+        container.innerHTML += `<p>Name: ${item.Name}</p>
+                              <p>Contact_No: ${item.Contact_No}</p>
+                              <p>Relationship: ${item.Relationship}</p>`;
+      });
+    }
+
+    function displayWork_Experience(experience) {
+      const container = document.getElementById("workExpierence");
+      experience.forEach((item) => {
+        container.innerHTML += ` <p>Company: ${item.Company}</p>
+                                <p>Position: ${item.Job_Title}</p>
+                                <p>Duration: ${item.Start_Date}</p>
+                                <p>Description: ${item.End_Date}</p>`
+      });
+    }
+  </script>
 </html>
