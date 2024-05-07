@@ -1,324 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Portfolio</title>
-        <style>
-            body {
-                font-family: 'Arial', sans-serif;
-                margin: 0;
-                padding: 0;
-                color: #333;
-                background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
-                    no-repeat center center fixed;
-                background-size: cover;
-            }
-            header,
-            footer {
-                background: rgba(32, 35, 42, 0.85);
-                color: #61dafb;
-                padding: 20px;
-                text-align: center;
-            }
-            nav {
-                text-align: center;
-                margin: 20px 0;
-            }
-            nav a {
-                color: #61dafb;
-                text-decoration: none;
-                padding: 10px 20px;
-                font-size: 18px;
-            }
-            nav a:hover {
-                text-decoration: underline;
-            }
-            .content {
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-around;
-                min-height: 80vh;
-            }
-            .portfolio {
-                background: rgba(255, 255, 255, 0.8);
-                padding: 40px;
-                margin: 30px 0;
-                border-radius: 10px;
-                width: 80%;
-                height: 1000px;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-                backdrop-filter: blur(5px);
-            }
-            .portfolio h2 {
-                color: #20232a;
-                margin-bottom: 20px;
-            }
-            .portfolio p {
-                color: #666;
-                font-size: 16px;
-                line-height: 1.6;
-            }
-            footer p {
-                margin: 0;
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80")
+          no-repeat center center fixed;
+        background-size: cover;
+      }
+      header,
+      footer {
+        background: rgba(32, 35, 42, 0.85);
+        color: #61dafb;
+        padding: 20px;
+        text-align: center;
+      }
+      nav {
+        text-align: center;
+        margin: 20px 0;
+      }
+      nav a {
+        color: #61dafb;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-size: 18px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        min-height: 80vh;
+      }
+      .portfolio {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 40px;
+        margin: 30px 0;
+        border-radius: 10px;
+        width: 80%;
+        height: 1000px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+      }
+      .portfolio h2 {
+        color: #20232a;
+        margin-bottom: 20px;
+      }
+      .portfolio p {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      footer p {
+        margin: 0;
+      }
 
-            /* ---------------------------------------------------- */
-            .personal-info-flex {
-                height: 80%;
-                display: flex;
-                flex-wrap: nowrap, wrap, wrap-reverse;
-            }
-            .personal-information-container img {
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                margin-right: 20px;
-                align-items: center;
-                border-radius: 50%;
-                border: 1px solid black;
-                margin-top: 20px;
-            }
+      /* ---------------------------------------------------- */
+      .personal-info-flex {
+        height: 80%;
+        display: flex;
+        flex-wrap: nowrap, wrap, wrap-reverse;
+      }
+      .personal-information-container img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-right: 20px;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid black;
+        margin-top: 20px;
+      }
 
-            .Personal_Information-about {
-                border-left: 1px solid rgba(0, 0, 0, 0.175);
-                margin-left: 70px;
-            }
+      .Personal_Information-about {
+        border-left: 1px solid rgba(0, 0, 0, 0.175);
+        margin-left: 70px;
+      }
 
-            #aboutMe,
-            #education {
-                margin-left: 1rem;
-            }
+      #aboutMe,
+      #education {
+        margin-left: 1rem;
+      }
 
-            #education {
-                margin-top: 5.5rem;
-            }
-            #aboutMe {
-                margin-top: 3rem;
-            }
+      
+      #aboutMe {
+        margin-top: 3rem;
+      }
 
-            /* bar styles */
-            .bar-container {
-                width: 80%;
-                margin-bottom: 5rem;
-            }
+      /* bar styles */
+      .bar-container {
+        width: 80%;
+        margin-bottom: 5rem;
+      }
 
-            .bar {
-                position: relative;
-                width: 200px; /* Adjust the width of the bars */
-                height: 20px; /* Adjust the height of the bars */
-                margin-right: 20px; /* Adjust spacing between bars */
-                background-color: #0000002f; /* Default color of the bars */
-                border-radius: 10px;
-                margin-top: 0.5rem;
-            }
+      .bar {
+        position: relative;
+        width: 200px; /* Adjust the width of the bars */
+        height: 20px; /* Adjust the height of the bars */
+        margin-right: 20px; /* Adjust spacing between bars */
+        background-color: #0000002f; /* Default color of the bars */
+        border-radius: 10px;
+        margin-top: 0.5rem;
+      }
 
-            .bar::before {
-                content: attr(data-percent) '%';
-                position: absolute;
-                bottom: 5px;
-                left: 50%;
-                transform: translateX(-50%);
-                color: white;
-                font-size: 12px;
-                z-index: 999;
-            }
+      .bar::before {
+        content: attr(data-percent) "%";
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 12px;
+        z-index: 999;
+      }
 
-            .bar::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 0;
-                height: 100%;
-                background-color: #ff562344; /* Default color of the filled portion */
-                border-radius: 10px;
-                animation: fillBar 2s ease-in-out forwards;
-            }
+      .bar::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #ff562344; /* Default color of the filled portion */
+        border-radius: 10px;
+        animation: fillBar 2s ease-in-out forwards;
+      }
 
-            @keyframes fillBar {
-                0% {
-                    width: 0;
-                }
-                100% {
-                    width: calc(var(--percent) * 1%);
-                }
-            }
+      @keyframes fillBar {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: calc(var(--percent) * 1%);
+        }
+      }
 
-            .bar:nth-child(2)::after {
-                background-color: rgba(
-                    226,
-                    226,
-                    15,
-                    0.344
-                ); /* Customize color for the second bar */
-            }
+      .bar:nth-child(2)::after {
+        background-color: rgba(
+          226,
+          226,
+          15,
+          0.344
+        ); /* Customize color for the second bar */
+      }
 
-            .bar:nth-child(3)::after {
-                background-color: #2195f344; /* Customize color for the third bar */
-            }
+      .bar:nth-child(3)::after {
+        background-color: #2195f344; /* Customize color for the third bar */
+      }
 
-            /* skills */
-            .skills-container {
-                margin-left: 1rem;
-                margin-top: 10rem;
-                border-top: 1px solid rgba(0, 0, 0, 0.175);
-            }
+      /* skills */
+      .skills-container {
+        display: flex;
+        gap: 2rem;
+        margin-left: 1rem;
+        margin-top: 10rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.175);
+      }
+      .education-container {
+        display: flex;
+        gap: 2rem;
+        margin-left: 1rem;
+        margin-top: 1.2rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.175);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>My Portfolio</h1>
+    </header>
 
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>My Portfolio</h1>
-        </header>
-
-        <div class="content">
-            <section class="portfolio" id="about">
-                <h2>About Me</h2>
-                <div class="personal-info-flex">
-                    <div class="personal-information-container">
-                        <img src="avata-profile.png" alt="" />
-                        <div id="personalInfo"></div>
-                    </div>
-                    <div class="Personal_Information-about">
-                        <p id="aboutMe"></p>
-                        <p id="education"></p>
-                        <div class="skills-container">
-                            <h2>Skills</h2>
-                            <div id="skills"></div>
-                            <div class="bar-container">
-                                <div class="bar" data-percent="80"></div>
-                                <div class="bar" data-percent="50"></div>
-                                <div class="bar" data-percent="30"></div>
-                            </div>
-                            <h2>Work Experience</h2>
-                            <div id="workExperience"></div>
-                        </div>
-                    </div>
+    <div class="content">
+      <section class="portfolio" id="about">
+        <h2>About Me</h2>
+        <div class="personal-info-flex">
+          <div class="personal-information-container">
+            <img src="avata-profile.png" alt="" />
+            <div id="personalInfo"></div>
+          </div>
+          <div class="Personal_Information-about">
+            <p id="aboutMe"></p>
+            <div class="education-container">
+              <div>
+                <h2>Education</h2>
+                <p id="education"></p>
+              </div>
+                <div>
+                    <h2>Personal Reference</h2>
+                    <p id="personalReference"></p>
                 </div>
-            </section>
+            </div>
+            <div class="skills-container">
+              <div>
+                <h2>Skills</h2>
+                <div id="skills"></div>
+                <div class="bar-container">
+                  <div class="bar" data-percent="80"></div>
+                  <div class="bar" data-percent="50"></div>
+                  <div class="bar" data-percent="30"></div>
+                </div>
+              </div>
+              <div>
+                <h2>Work Experience</h2>
+                <div id="workExperience"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <footer>
-            <p>© 2024 My Portfolio</p>
-        </footer>
-    </body>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const apiUrl = 'https://webservice-wkoq.onrender.com';
+      </section>
+    </div>
+    <footer>
+      <p>© 2024 My Portfolio</p>
+    </footer>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const apiUrl = "https://webservice-wkoq.onrender.com";
 
-            fetch(apiUrl)
-                .then((response) => response.json())
-                .then((data) => {
-                    displayPersonalInfo(data.Personal_Information);
-                    displayAboutMe(data.About_Me);
-                    displaySkills(data.Skills);
-                    displayEducation(data.Education);
-                    displayPersonal_References(data.Personal_References);
-                    displayWork_Experience(data.Work_Experience);
-                })
-                .catch((error) => console.error('Error fetching data:', error));
-        });
-        document.querySelectorAll('.bar').forEach((bar) => {
-            const percent = bar.getAttribute('data-percent');
-            bar.style.setProperty('--percent', percent);
-        });
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          displayPersonalInfo(data.Personal_Information);
+          displayAboutMe(data.About_Me);
+          displaySkills(data.Skills);
+          displayEducation(data.Education);
+          displayPersonal_References(data.Personal_References);
+          displayWork_Experience(data.Work_Experience);
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    });
+    document.querySelectorAll(".bar").forEach((bar) => {
+      const percent = bar.getAttribute("data-percent");
+      bar.style.setProperty("--percent", percent);
+    });
 
-        function displayPersonalInfo(info) {
-            const container = document.getElementById('personalInfo');
-            info.forEach((item) => {
-                container.innerHTML +=
-                    '<p>Name: ' +
-                    item.Name +
-                    '</p>' +
-                    '<p>Birthdate: ' +
-                    item.Birthdate +
-                    '</p>' +
-                    '<p>Gender: ' +
-                    item.Gender +
-                    '</p>' +
-                    '<p>Contact No: ' +
-                    item.Contact_No +
-                    '</p>' +
-                    '<p>Address: ' +
-                    item.Address +
-                    '</p>' +
-                    '<p>Email: ' +
-                    item.Email +
-                    '</p>';
-            });
-        }
+    function displayPersonalInfo(info) {
+      const container = document.getElementById("personalInfo");
+      info.forEach((item) => {
+        container.innerHTML +=
+          "<p>Name: " +
+          item.Name +
+          "</p>" +
+          "<p>Birthdate: " +
+          item.Birthdate +
+          "</p>" +
+          "<p>Gender: " +
+          item.Gender +
+          "</p>" +
+          "<p>Contact No: " +
+          item.Contact_No +
+          "</p>" +
+          "<p>Address: " +
+          item.Address +
+          "</p>" +
+          "<p>Email: " +
+          item.Email +
+          "</p>";
+      });
+    }
 
-        function displayAboutMe(about) {
-            const container = document.getElementById('aboutMe');
-            about.forEach((item) => {
-                container.innerHTML += '<p> ' + item.Description + '</p>';
-            });
-        }
+    function displayAboutMe(about) {
+      const container = document.getElementById("aboutMe");
+      about.forEach((item) => {
+        container.innerHTML += "<p> " + item.Description + "</p>";
+      });
+    }
 
-        function displaySkills(skills) {
-            const container = document.getElementById('skills');
-            skills.forEach((item) => {
-                const p = document.createElement('p');
-                p.textContent = '' + item.Languages.join(', ');
-                container.appendChild(p);
-            });
-        }
+    function displaySkills(skills) {
+      const container = document.getElementById("skills");
+      skills.forEach((item) => {
+        const p = document.createElement("p");
+        p.textContent = "" + item.Languages.join(", ");
+        container.appendChild(p);
+      });
+    }
 
-        function displayEducation(education) {
-            const container = document.getElementById('education');
-            education.forEach((item) => {
-                container.innerHTML +=
-                    '<p>Degree: ' +
-                    item.Degree +
-                    '</p>' +
-                    '<p>School: ' +
-                    item.Institution +
-                    '</p>' +
-                    '<p>Year: ' +
-                    item.Year +
-                    '</p>';
-            });
-        }
+    function displayEducation(education) {
+      const container = document.getElementById("education");
+      education.forEach((item) => {
+        container.innerHTML +=
+          "<p>Degree: " +
+          item.Degree +
+          "</p>" +
+          "<p>School: " +
+          item.Institution +
+          "</p>" +
+          "<p>Year: " +
+          item.Year +
+          "</p>";
+      });
+    }
 
-        function displayPersonal_References(references) {
-            const container = document.getElementById('personalReference');
-            references.forEach((item) => {
-                const div = document.createElement('div');
-                div.innerHTML =
-                    '<p>Name: ' +
-                    item.Name +
-                    '</p>' +
-                    '<p>Contact No: ' +
-                    item.Contact_No +
-                    '</p>' +
-                    '<p>Relationship: ' +
-                    item.Relationship +
-                    '</p>';
-                container.appendChild(div);
-            });
-        }
+    function displayPersonal_References(references) {
+      const container = document.getElementById("personalReference");
+      references.forEach((item) => {
+        const div = document.createElement("div");
+        div.innerHTML =
+          "<p>Name: " +
+          item.Name +
+          "</p>" +
+          "<p>Contact No: " +
+          item.Contact_No +
+          "</p>" +
+          "<p>Relationship: " +
+          item.Relationship +
+          "</p>";
+        container.appendChild(div);
+      });
+    }
 
-        function displayWork_Experience(experience) {
-            const container = document.getElementById('workExperience');
-            experience.forEach((item) => {
-                const div = document.createElement('div');
-                div.innerHTML =
-                    '<p>Company: ' +
-                    item.Company +
-                    '</p>' +
-                    '<p>Position: ' +
-                    item.Job_Title +
-                    '</p>' +
-                    '<p>Duration: ' +
-                    item.Start_Date +
-                    '</p>' +
-                    '<p>Description: ' +
-                    item.End_Date +
-                    '</p>';
-                container.appendChild(div);
-            });
-        }
-    </script>
+    function displayWork_Experience(experience) {
+      const container = document.getElementById("workExperience");
+      experience.forEach((item) => {
+        const div = document.createElement("div");
+        div.innerHTML =
+          "<p>Company: " +
+          item.Company +
+          "</p>" +
+          "<p>Position: " +
+          item.Job_Title +
+          "</p>" +
+          "<p>Duration: " +
+          item.Start_Date +
+          "</p>" +
+          "<p>Description: " +
+          item.End_Date +
+          "</p>";
+        container.appendChild(div);
+      });
+    }
+  </script>
 </html>
